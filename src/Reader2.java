@@ -5,10 +5,9 @@ import java.util.*;
 import java.io.*;
 public class Reader2
 {
-	//private ArrayList<String> rawFileLines = new ArrayList<String>(); //Stores lines of file content
-	private ArrayList<String> splitSource = new ArrayList<String>(); //Stores lines webpage content 
+	
+  private ArrayList<String> splitSource = new ArrayList<String>(); //Stores lines webpage content 
   private String ticker = ""; //stores user inputed ticker 
-  //private Long lastUnix;
   private Long startUnix = 0L;
   private String fileName = "";
   private PrintWriter f;
@@ -28,38 +27,7 @@ public Reader2(String stockTicker)
 		System.out.print(e);
 	}
 }
-	
-  /* **This method is commented out because the text file is overwritten
-   * every time the program is run.*** 
-  public void getLastTime()
-  {
-  	fileName = ticker + ".txt";
-  	try (Scanner file = new Scanner(new File(fileName))) 
-    {
-    	//Copy all file content into an ArrayList
-    	while (file.hasNextLine()) 
-      {
-       rawFileLines.add(file.nextLine()); 
-      }   
-    	String[] lastLine = rawFileLines.get(-2).split(",");
-    	lastUnix = Long.parseLong(lastLine[0]);
-    	System.out.println(lastLine);
-     }
-    catch (Exception e) 
-    {
-    	try 
-    	{
-    		FileWriter newFile = new FileWriter(fileName);
-    		newFile.close();
-    	}
-    	catch (Exception f) 
-    	{
-    		System.out.print("Could not create file.");
-    	}
-    	lastUnix = 0L;
-    } 	
-  }
-   */
+
 /*WEBPAGE -----> ARRAY */
   public void webToArray()
   {
@@ -100,16 +68,6 @@ public Reader2(String stockTicker)
   {
   	try
   	{
-  		
-  		//File file = new File(fileName);
-  		//System.out.println(file.getAbsolutePath());
-  		
-  		//PrintWriter f  = new PrintWriter(new FileWriter(file, false));
-  		//PrintWriter f = new PrintWriter(new FileWriter(new File(fileName), false ));
-  				//BufferedWriter f = new BufferedWriter(new FileWriter(file, false ));
-  		
-  	
-  		//FileWriter f = new FileWriter(fileName);
   		for (String eachLine : splitSource) 
   		{
   			String[] splitLine = eachLine.split(","); 
